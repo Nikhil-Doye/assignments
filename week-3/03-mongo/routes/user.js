@@ -58,6 +58,9 @@ router.get('/purchasedCourses', userMiddleware, async (req, res) => {
         _id:{
             "$in": user.purchasedCourses
         }
+    });
+    res.json({
+        courses: courses
     })
 });
 
