@@ -42,7 +42,7 @@ router.post('/courses/:courseId', userMiddleware, (req, res) => {
     });
 
     res.json({
-      message: "Course purchased successfully",
+      message: "Course purchased successfully"
     });
 });
 
