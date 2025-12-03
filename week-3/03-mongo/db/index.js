@@ -6,16 +6,22 @@ mongoose.connect('your-mongodb-url');
 // Define schemas
 const AdminSchema = new mongoose.Schema({
   // Schema definition here
-  adminID: mongoose.Schema.Types.UUID,
   adminName: String,
-  adminPassword: String
+  adminPassword: String,
+  allCourses: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Course'
+  }]
 });
 
 const UserSchema = new mongoose.Schema({
   // Schema definition here
-  userID: mongoose.Schema.Types.UUID,
   userName: String,
-  userPassword: String
+  userPassword: String,
+  purchasedCourses: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'Course'
+  }]
 });
 
 const CourseSchema = new mongoose.Schema({
